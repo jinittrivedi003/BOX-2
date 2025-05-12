@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BOGO Offer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+    }
+    .dropdown1 {
+     padding: .375rem .75rem;
+    border-color: rgb(173, 173, 173) !important;
+    border-style: solid !important;
+    border-width: 1px !important;
+    border-radius: 5px;
+    padding-right: 20px;
+
+
+    }
+    .container {
+      width: 350px;
+      border: 2px solid #eee;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #f06c9b;
+    }
+
+    .option {
+      border: 1px solid #ddd;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .option.selected {
+      border: 2px solid #f06c9b;
+      background-color: #fff5f9;
+    }
+
+    .badge {
+      background: #f06c9b;
+      color: #fff;
+      padding: 2px 6px;
+      font-size: 12px;
+      border-radius: 3px;
+      margin-left: 10px;
+    }
+
+    .most-popular {
+      position: absolute;
+      right: 10px;
+      top: -10px;
+      background: #f06c9b;
+      color: #fff;
+      font-size: 12px;
+      padding: 3px 6px;
+      border-radius: 3px;
+    }
+
+    .hidden {
+      display: none;
+      margin-top: 10px;
+    }
+
+    .controls {
+      margin: 5px 0;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .btn {
+      background: #f06c9b;
+      color: #fff;
+      border: none;
+      padding: 10px;
+      width: 100%;
+      cursor: pointer;
+      font-size: 16px;
+      border-radius: 5px;
+    }
+
+    .price {
+      float: right;
+      font-weight: bold;
+    }
+
+    .free-delivery {
+      color: #f06c9b;
+      font-size: 14px;
+    }
+ 
+.row {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  font-size: 15px;
+}
+.label-num {
+ font-size: 10px;
+  /* margin-right: 10px;
+  min-width: 30px; */
+}
+.lbl{
+    font-size: 12px;padding-bottom: 5px;
+}
+.frow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.price-w {
+  float: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: gray;
+  font-size: 14px;
+  margin-bottom: 2px;
+  margin-right: 44px;
+}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>YAY! It’s BOGO</h2>
+
+    <div class="option" onclick="selectOption(this, 1)">
+      <input type="radio" name="unit" style="margin-right: 5px;">1 Unit <span class="badge">10% Off</span>
+      <div class="price-w">
+         <span class="price">$10.00 USD</span>
+        <span class="old-price">$24.00</span>
+       
+    </div>
+      <div class="hidden controls" id="controls-1">
+        
+<div class="row">
+  <div class="item">
+    <label class="lbl" for="drop">Size</label>
+    <select class="dropdown1" id="drop">
+      <option>S</option>
+      <option>M</option>
+      <option>L</option>
+    </select>
+  </div>
+  <div class="item">
+    <label class="lbl" for="color1">Color</label>
+    <select class="dropdown1" id="color1">
+      <option>Black</option>
+      <option>Red</option>
+      <option>Blue</option>
+    </select>
+  </div>
+</div>      
+      </div>
+    </div>
+
+    <div class="option" onclick="selectOption(this, 2)">
+      <input type="radio" name="unit" style="margin-right: 5px;">2 Unit <span class="badge">20% Off</span>
+      <span class="most-popular">MOST POPULAR</span>
+      <div class="price-w">
+         <span class="price">$18.00 USD</span>
+        <span class="old-price">$24.00</span>
+    </div>
+      <div class="hidden controls" id="controls-2">
+        <div class="row">
+  <div class="label-num">#1</div>
+  <div class="item">
+    <label class="lbl" for="drop2">Size</label>
+    <select class="dropdown1" id="drop2">
+      <option>S</option>
+      <option>M</option>
+      <option>L</option>
+    </select>
+  </div>
+  <div class="item">
+    <label class="lbl" for="color2">Color</label>
+    <select class="dropdown1" id="color2">
+      <option>Black</option>
+      <option>Red</option>
+      <option>Blue</option>
+    </select>
+  </div>
+</div>
+
+        <div class="row">
+           <div class="label-num">#2</div>
+           <div class="item">
+          <label  class="lbl" for="drop21">Size</label>
+          <select class="dropdown1" id="drop21">
+            
+            <option>S</option>
+            <option>M</option>
+            <option>L</option>
+          </select>
+          </div>
+          <div class="item">
+        <label class="lbl" for="color2">Color</label>
+          <select  class="dropdown1">
+            <option>Black</option>
+            <option>Red</option>
+            <option>Blue</option>
+          </select>
+          </div>
+        </div>
+        
+       
+      
+</div>
+</div>
+    <div class="option" onclick="selectOption(this, 3)">
+      <input type="radio" name="unit" style="margin-right: 5px;">3 Unit <span class="badge">30% Off</span>
+     <div class="price-w">
+         <span class="price">$24.00 USD</span>
+        <span class="old-price">$30.00</span>
+       
+    </div>
+      <div class="hidden controls" id="controls-3">
+        <div class="row">
+       
+           <div class="label-num">#1</div>
+            <div class="item">
+          <label class="lbl" for="drop3">Size</label>
+          <select class="dropdown1" id="drop3">
+            <option>S</option>
+            <option>M</option>
+            <option>L</option>
+          </select>
+          </div>
+          <div class="item">
+          <label class="lbl" for="color3">Colour</label>
+          <select class="dropdown1" id="color3">
+            <option>Black</option>
+            <option>Red</option>
+            <option>Blue</option>
+          </select>
+        </div>
+    </div>
+        <div class="row">
+           <div class="label-num">#2</div>
+           <div class="item">
+            <label class="lbl" for="drop4">Size</label>
+            
+          <select class="dropdown1" id="drop4">
+            <option>S</option>
+            <option>M</option>
+            <option>L</option>
+          </select>
+          </div>
+          <div class="item">
+          <label  class="lbl" for="color4">Colour</label>
+          <select class="dropdown1" id="color4">
+            <option>Black</option>
+            <option>Red</option>
+            <option>Blue</option>
+          </select>
+        </div>
+        </div>
+        <div class="row">
+           <div class="label-num">#3</div>
+           <div class="item">
+            <label class="lbl" for="drop5">Size</label>
+          <select class="dropdown1" id="drop5">
+            <option>S</option>
+            <option>M</option>
+            <option>L</option>
+          </select>
+            </div>
+            <div class="item">
+                 <label  class="lbl" for="color5">Colour</label>
+            <select class="dropdown1" id="color5">
+           
+            <option>Black</option>
+            <option>Red</option>
+            <option>Blue</option>
+          </select>
+        </div>
+        </div>
+      </div>
+      </div>
+    
+
+    <div class="footer">
+        <div class="frow">
+      <p class="free-delivery">Free Delivery</p>
+      <div style="margin-right: 20px;" >
+      <p><strong>Total:</strong> <span id="total-price">$0.00 USD</span></p>
+    </div>  
+    </div>
+      <button class="btn">+ Add to Cart</button>
+      
+    </div>
+  </div>
+
+  <script>
+    function selectOption(element, num) {
+      let options = document.querySelectorAll('.option');
+      options.forEach(opt => {
+        opt.classList.remove('selected');
+        opt.querySelector('input').checked = false;
+        opt.querySelector('.controls').classList.add('hidden');
+      });
+
+      element.classList.add('selected');
+      element.querySelector('input').checked = true;
+      document.getElementById('controls-' + num).classList.remove('hidden');
+
+      // Update price
+      let total = "$0.00 USD";
+      if (num === 1) total = "$10.00 USD";
+      else if (num === 2) total = "$18.00 USD";
+      else if (num === 3) total = "$24.00 USD";
+      document.getElementById('total-price').innerText = total;
+    }
+  </script>
+</body>
+</html>
